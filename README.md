@@ -1,4 +1,4 @@
-*** My nixos config so far.
+My nixos config so far.
 TODO:
-    - [] flakefy disko
-    - [] more flakes
+    - flakefy disko
+    - more flakes
