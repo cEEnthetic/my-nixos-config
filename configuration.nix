@@ -47,14 +47,6 @@ in
   users.users.regular = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     #packages = with pkgs; [
-     # bspwm
-     # sxhkd
-     # audacity
-     # openshot-qt
-     # chromium
-     # inkscape
-     #];
   };
 
   hardware.bluetooth = {

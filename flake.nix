@@ -14,7 +14,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true; # install packages in the /etc/profiles (to share)
-          home-manager.users.regular = ./home/home.nix;
+          home-manager.users.regular = import ./home inputs;
         }
       ];
     };
