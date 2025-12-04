@@ -7,14 +7,25 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations.mogos = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  # something to pass to home-manager
+  let
+    pkgs = nixpkgs;
+  in
+  {
+    # create config for mogos
+    nixosConfigurations.mogos = nixpkgs.lib.nixosSystem
+    {
+      modules =
+      [
+        ./hosts/mogos
         home-manager.nixosModules.home-manager {
+          # to avoid package bugs due to version mismatch.
           home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true; # install packages in the /etc/profiles (to share)
-          home-manager.users.regular = import ./home inputs;
+          # to save some space (shared packages)
+          home-manager.useUserPackages = true;
+          # se.
+          home-manager.users.regular = import ./home { inherit pkgs; };
         }
       ];
     };
