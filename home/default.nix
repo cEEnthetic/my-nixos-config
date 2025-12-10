@@ -10,5 +10,6 @@
     ./modules/xserver.nix
     ./modules/vim.nix
     ./modules/fonts.nix
+    ./modules/tmux.nix
   ];
 }
