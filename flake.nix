@@ -18,7 +18,7 @@
     {
       modules =
       [
-        ./hosts/mogos
+        ./hosts/mogos/default.nix
         home-manager.nixosModules.home-manager {
           # to avoid package bugs due to version mismatch.
           home-manager.useGlobalPkgs = true;
