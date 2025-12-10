@@ -29,5 +29,7 @@
         }
       ];
     };
+    nixosConfigurations.default = mogos;
+
   };
 }
