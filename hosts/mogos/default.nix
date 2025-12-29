@@ -86,6 +86,7 @@ in
     libreoffice-still
     heroic
     lutris
+    qemu
   ];
 
   # System wide configuration
@@ -118,7 +119,7 @@ in
     [0m[34m[1m              [0m[34m[1m/#####/    \######\[0m[36m[1m      \######
     [0m[34m[1m              [0m[34m[1m\####/      \######\[0m[36m[1m      \####/
     [0m[34m[1m               [0m[34m[1m¯¯¯¯        ¯¯¯¯¯¯¯[0m[36m[1m       ¯¯¯¯[0m
-    [1;32m<<< Welcome to NixOs 24.11.718112.72841a4a8761 (\m) - \l >>>[0m\n
+    [1;32m<<< This is \n.\o, running \S on a \s kernel, version \r >>>[0m
   '';
 
   # Vim is king
@@ -144,48 +145,6 @@ in
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-33.4.11" ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
 
