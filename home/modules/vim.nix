@@ -16,7 +16,7 @@ in
       set ruler  
       set ai
       syntax on
-      colorscheme morning
+      colorscheme default
       nnoremap <C-j> <cmd>bprev<cr> 
       nnoremap <C-k> <cmd>bnext<cr> 
     '';
