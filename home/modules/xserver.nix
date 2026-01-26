@@ -15,7 +15,7 @@
       '';
       executable = true;
     };
-    ".Xresources" = {
+    ".Xdefaults" = {
       text = ''
         XTerm*faceName: Monospace
         XTerm*faceSize: 12
