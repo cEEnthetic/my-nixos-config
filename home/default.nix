@@ -11,5 +11,6 @@
     ./modules/vim.nix
     ./modules/fonts.nix
     ./modules/tmux.nix
+    ./modules/gitlfs.nix
   ];
 }
