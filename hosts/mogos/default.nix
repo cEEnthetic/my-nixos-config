@@ -1,7 +1,4 @@
 { config, lib, pkgs, ... }:
-let
-  #somtin
-in
 {
   imports =
   [ # Include the results of the hardware scan.
@@ -70,6 +67,7 @@ in
   environment.systemPackages = with pkgs; [
     home-manager
     docker
+    vmware-workstation
     rlaunch
     greetd.greetd
     blugon
@@ -86,7 +84,6 @@ in
     neofetch
     libreoffice-still
     heroic
-    lutris
     qemu
   ];
 
