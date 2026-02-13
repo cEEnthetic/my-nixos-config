@@ -64,7 +64,7 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
-  virtualization.vmware = {
+  virtualisation.vmware = {
     host.enable = true;
     guest.enable = true;
   };
