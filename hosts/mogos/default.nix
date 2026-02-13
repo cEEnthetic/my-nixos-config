@@ -69,6 +69,7 @@ in
 
   environment.systemPackages = with pkgs; [
     home-manager
+    docker
     rlaunch
     greetd.greetd
     blugon
