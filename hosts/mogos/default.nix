@@ -68,6 +68,7 @@
     home-manager
     docker
     vmware-workstation
+    linuxKernel.packages.linux_6_12.vmware
     rlaunch
     greetd.greetd
     blugon
