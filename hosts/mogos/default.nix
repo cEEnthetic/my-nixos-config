@@ -64,11 +64,16 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
+  virtualization.vmware = {
+    host.enable = true;
+    guest.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     home-manager
     docker
-    vmware-workstation
     linuxKernel.packages.linux_6_12.vmware
+    vmware-workstation
     rlaunch
     greetd.greetd
     blugon
