@@ -11,6 +11,7 @@
     ".xinitrc" = {
       text = ''
         sxhkd &
+        flameshot &
         bspwm
       '';
       executable = true;
