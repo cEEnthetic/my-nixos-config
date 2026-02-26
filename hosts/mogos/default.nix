@@ -78,6 +78,7 @@
     greetd.greetd
     blugon
     feh
+    asciidoctor
     prismlauncher
     wpa_supplicant_gui
     flameshot
