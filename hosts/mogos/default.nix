@@ -14,9 +14,14 @@
   
   # Networking
   networking.hostName = "mogos";
-  networking.wireless.enable = true;
   # Wireless
-  networking.wireless.userControlled.enable = true;  
+  networking.wireless = {
+    enable = true;
+    secretsFile = = "/var/tmp/wireless.conf";
+    networks = {
+      Halo = { pskRaw = "ext:psk_halo"};
+    };
+  };
 
   # Time zone 
   time.timeZone = "Europe/Budapest";
@@ -80,7 +85,6 @@
     feh
     asciidoctor
     prismlauncher
-    wpa_supplicant_gui
     flameshot
     discord
     gimp
