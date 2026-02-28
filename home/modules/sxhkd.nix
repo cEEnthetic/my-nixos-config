@@ -12,7 +12,7 @@ in
     super + {Return,f,space}	
       {xterm,firefox,rlaunch}
 
-    super + alt + {q,r}	
+    super + ctrl + {q,r}	
       bspc {quit,wm -f ; pkill -USR1 -x sxhkd}
 
     super + w	
