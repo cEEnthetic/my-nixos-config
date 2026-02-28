@@ -36,7 +36,7 @@
       enableTearFree = true; 
       xkb = {
         layout = "us,hu";
-        options = "grp:alt_space_toggle";
+        options = "grp:lswitch";
       };
     };
   };
