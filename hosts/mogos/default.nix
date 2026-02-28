@@ -19,7 +19,7 @@
     enable = true;
     secretsFile = "/var/tmp/wireless.conf";
     networks = {
-      Halo = { pskRaw = "ext:psk_halo"};
+      Halo = { pskRaw = "ext:psk_halo"; };
     };
   };
 
