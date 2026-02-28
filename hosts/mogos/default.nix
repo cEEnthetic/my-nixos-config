@@ -17,7 +17,7 @@
   # Wireless
   networking.wireless = {
     enable = true;
-    secretsFile = = "/var/tmp/wireless.conf";
+    secretsFile = "/var/tmp/wireless.conf";
     networks = {
       Halo = { pskRaw = "ext:psk_halo"};
     };
