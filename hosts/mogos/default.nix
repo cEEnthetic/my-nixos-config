@@ -69,9 +69,14 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
-  virtualisation.vmware = {
-    host.enable = true;
-    guest.enable = true;
+  virtualisation = {
+    vmware = {
+      host.enable = true;
+      guest.enable = true;
+    };
+    docker = {
+      enable = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
