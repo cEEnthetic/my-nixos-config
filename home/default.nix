@@ -12,5 +12,6 @@
     ./modules/fonts.nix
     ./modules/tmux.nix
     ./modules/gitlfs.nix
+    ./modules/picard.nix
   ];
 }
