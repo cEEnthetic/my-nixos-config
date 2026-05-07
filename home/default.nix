@@ -13,5 +13,6 @@
     ./modules/tmux.nix
     ./modules/gitlfs.nix
     ./modules/picard.nix
+    ./modules/syncthing.nix
   ];
 }
