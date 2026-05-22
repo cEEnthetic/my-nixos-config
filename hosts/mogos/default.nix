@@ -39,7 +39,9 @@
     services.anki-sync-server = {
       enable = true;
       openFirewall = true;
-      users.*.passwordFile = /var/tmp/anki-sync-server.conf;
+      users = [
+        { username="placeholder"; passwordFile = /var/tmp/anki-sync-server.conf; }
+      ];
     };
     system.stateVersion = "24.11";
    };
@@ -107,7 +109,7 @@
     linuxKernel.packages.linux_6_12.vmware
     vmware-workstation
     rlaunch
-    greetd.greetd
+    greetd
     blugon
     feh
     asciidoctor
