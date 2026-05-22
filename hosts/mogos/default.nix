@@ -21,6 +21,7 @@
       networks = {
         Halo = { pskRaw = "ext:psk_halo"; };
         titkos_kem_szervezet = { pskRaw = "ext:psk_titkos"; };
+      };
     };
     bridges.br0.interfaces = [ "enp0s25" "wlp3s0" ];
     interfaces."br0".ipv4.addresses = [{
@@ -30,18 +31,19 @@
   };
 
   # Containers
-  containers.anki = {
-    privateNetwork = true;
-    hostBridge = "br0";
-    localAddress = "192.168.1.201/24";
-    config = { config, pkgs, lib, ... }: {
-      services.anki-sync-server = {
-        enable = true;
-        openFirewall = true;
-        users."*".passwordFile = "/var/tmp/anki-sync-server.conf";
-      };
+ containers.anki = {
+   privateNetwork = true;
+   hostBridge = "br0";
+   localAddress = "192.168.1.201/24";
+   config = { config, lib, pkgs, ... }: {
+    services.anki-sync-server = {
+      enable = true;
+      openFirewall = true;
+      users.regular.passwordFile = "/var/tmp/anki-sync-server.conf";
     };
-  };
+    system.stateVersion = "24.11";
+   };
+ };
 
   # Time zone 
   time.timeZone = "Europe/Budapest";
@@ -52,7 +54,7 @@
   services = {
     greetd = { 
       enable = true;
-      settings = {default_session = { command = "${pkgs.greetd.greetd}/bin/agreety --cmd startx";};};
+      settings = {default_session = { command = "${pkgs.greetd}/bin/agreety --cmd startx";};};
     };
     xserver = {
       enable = true;
