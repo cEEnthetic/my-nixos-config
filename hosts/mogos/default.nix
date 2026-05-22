@@ -39,7 +39,7 @@
     services.anki-sync-server = {
       enable = true;
       openFirewall = true;
-      users.regular.passwordFile = "/var/tmp/anki-sync-server.conf";
+      users.*.passwordFile = /var/tmp/anki-sync-server.conf;
     };
     system.stateVersion = "24.11";
    };
