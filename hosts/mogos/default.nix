@@ -23,32 +23,47 @@
         titkos_kem_szervezet = { pskRaw = "ext:psk_titkos"; };
       };
     };
+    useDHCP = false;
     bridges.br0.interfaces = [ "enp0s25" ];
     interfaces."br0".useDHCP = true;
-    interfaces."enp0s25".useDHCP = false;
-   #interfaces."br0".ipv4.addresses = [{
-   # address = "192.168.1.199";
-   # prefixLength = 24;
-   #}];
   };
 
   # Containers
-#containers.anki = {
-#  autoStart = true;
-#  privateNetwork = true;
-#  hostBridge = "br0";
-#  localAddress = "192.168.1.201/24";
-#  config = { config, lib, pkgs, ... }: {
-#   services.anki-sync-server = {
-#     enable = true;
-#     openFirewall = true;
-#     users = [
-#       { username="placeholder"; passwordFile = /var/tmp/anki-sync-server.conf; }
-#     ];
-#   };
-#   system.stateVersion = "24.11";
-#  };
-#};
+ containers.anki = {
+   autoStart = true;
+   privateNetwork = true;
+   hostBridge = "br0";
+   localAddress = "192.168.1.201/24";
+   config = { config, lib, pkgs, ... }: {
+     users.users.ankisync = {
+      isSystemUser = true;
+      group = "ankisync";
+      home = "/var/lib/anki-sync-server";
+      createHome = true;
+    };
+
+    users.groups.ankisync = {};
+    systemd.services.anki-sync-server.serviceConfig = {
+      DynamicUser = lib.mkForce false;
+      User = "ankisync";
+      Group = "ankisync";
+      WorkingDirectory = "/var/lib/anki-sync-server";
+      PrivateDevices = false;
+      CapabilityBoundingSet = "";
+    };
+
+    services.anki-sync-server = {
+      enable = true;
+      address = "0.0.0.0";
+      openFirewall = true;
+      baseDirectory = "/var/lib/anki-sync-server";
+      users = [
+        { username="bob"; password="bob"; }
+      ];
+    };
+    system.stateVersion = "24.11";
+   };
+ };
 
   # Time zone 
   time.timeZone = "Europe/Budapest";
