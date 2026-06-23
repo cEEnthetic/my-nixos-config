@@ -14,5 +14,6 @@
     ./modules/gitlfs.nix
     ./modules/picard.nix
     ./modules/syncthing.nix
+    ./modules/anki.nix
   ];
 }
