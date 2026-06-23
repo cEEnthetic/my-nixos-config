@@ -26,6 +26,7 @@
     useDHCP = false;
     bridges.br0.interfaces = [ "enp0s25" ];
     interfaces."br0".useDHCP = true;
+    interfaces."wlp3s0".useDHCP = true;
   };
 
   # Containers
