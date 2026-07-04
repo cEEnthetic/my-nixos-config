@@ -71,24 +71,6 @@
 
   nixpkgs.config.allowUnfree = true; 
 
-  # Getting graphical
-  services = {
-    greetd = { 
-      enable = true;
-      settings = {default_session = { command = "${pkgs.greetd}/bin/agreety --cmd startx";};};
-    };
-    xserver = {
-      enable = true;
-      displayManager.lightdm.enable = false;
-      displayManager.startx.enable = true;
-      enableTearFree = true; 
-      xkb = {
-        layout = "us,hu";
-        options = "grp:lswitch";
-      };
-    };
-  };
-
   users.users.regular = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -111,6 +93,8 @@
   # System wide software
   programs.firefox.enable = true;
   programs.steam.enable = true;
+  programs.niri.enable = true;
+  services.displayManager.ly.enable = true;
 
   virtualisation = {
     vmware = {
@@ -144,6 +128,7 @@
     libreoffice-still
     heroic
     qemu
+    alacritty
   ];
 
   # System wide configuration

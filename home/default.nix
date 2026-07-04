@@ -4,10 +4,10 @@
   home.username = "regular";
   home.homeDirectory = "/home/regular";
 
+  programs.fuzzel.enable = true;
+  programs.alacritty.enable = true;
+
   imports = [ 
-    ./modules/bspwm.nix
-    ./modules/sxhkd.nix
-    ./modules/xserver.nix
     ./modules/vim.nix
     ./modules/fonts.nix
     ./modules/tmux.nix
@@ -15,5 +15,6 @@
     ./modules/picard.nix
     ./modules/syncthing.nix
     ./modules/anki.nix
+    ./modules/niri.nix
   ];
 }
