@@ -94,7 +94,12 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.niri.enable = true;
-  services.displayManager.ly.enable = true;
+  services = {
+    displayManager.ly.enable = true;
+  };
+
+  # According to https://wiki.nixos.org/wiki/Swaylock
+  security.pam.services.swaylock = {};
 
   virtualisation = {
     vmware = {
